@@ -1,0 +1,903 @@
+* {
+    box-sizing: border-box;
+    /* ширина будет включать в себя границы и всё содержимое подстроит свои размеры, чтобы уместиться в этих рамках. */
+}
+
+
+/* *{
+    box-sizing: border-box;
+}-ставится в начало любого CSS кода */
+
+a {
+    text-decoration: none;
+    /* Убирает подчеркивание ссылок */
+    display: inline-block;
+}
+
+li,
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*margin: 0 auto;-поставить обьект в центр*/
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #5e5e5e;
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header__top {
+    background-color: #303030;
+}
+
+.header__btn {
+    float: right;
+    line-height: 36px;
+    color: #1b1b1b;
+    background-color: #ffc222;
+    padding: 5px 20px 4px 50px;
+    font-size: 16px;
+    display: block;
+    position: relative;
+}
+
+.header__btn:before {
+    content: "\f0b1";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 22px;
+    color: #1b1b1b;
+}
+
+
+/* Padding 45px-36px=9px --> top-5 bottom-4 */
+
+.header__contacts::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.header__phone {
+    color: #d3d2d2;
+    letter-spacing: 0.25px;
+    /* отступ между символами */
+    line-height: 45px;
+    padding-left: 20px;
+    padding-right: 30px;
+    position: relative;
+}
+
+
+/* position: relative; Положение элемента устанавливается относительно его исходного места. Добавление свойств left, top, right и bottom изменяет позицию элемента и сдвигает его в ту или иную сторону от первоначального расположения. */
+
+.header__phone::before {
+    content: "\f095";
+    font-family: 'icomoon' !important;
+    position: absolute;
+    left: 0;
+    color: #ffc222;
+}
+
+
+/* position: absolute;Указывает, что элемент абсолютно позиционирован, при этом другие элементы отображаются на веб-странице словно абсолютно позиционированного элемента и нет. Положение элемента задается свойствами left, top, right и bottom, */
+
+.header__email {
+    color: #d3d2d2;
+    letter-spacing: 0.25px;
+    line-height: 45px;
+    padding-left: 24px;
+    position: relative;
+}
+
+
+/* before - значек почты перед вводом почты. */
+
+.header__email::before {
+    content: "\f003";
+    font-family: 'icomoon' !important;
+    position: absolute;
+    left: 0;
+    color: #ffc222;
+}
+
+.header__content {
+    padding: 34px 0px 24px;
+}
+
+.header__content-inner {
+    display: flex;
+    /* Определяет flex контейнер; inline или block в зависимости от заданного значения. Включает flex контекст для всех потомков первого уровня. */
+    justify-content: space-between;
+    /* расположить элементы через промежутки */
+}
+
+
+/* Разместить элементы  menu в одну строчку */
+
+.menu li {
+    display: inline-block;
+}
+
+
+/* padding: 0 16px;- отступ сверха и справа по 16 сверху 0. */
+
+.menu a {
+    color: #323232;
+    font-size: 16px;
+    line-height: 36px;
+    border: 1px solid transparent;
+    padding: 0 16px;
+}
+
+
+/* transparent - сделать элемент прозрачным
+ transition: 3s;- замедлить эффект на 3 секунды*/
+
+
+/* .menu a:hover{cursor:pointer}- свойство применится к элементам меню и ко всем элементам с тэгом <a href="#"> */
+
+.menu a:hover {
+    cursor: pointer;
+    border-color: #ffc222;
+    transition: all 3s;
+}
+
+
+/*.menu li + li{
+    padding-left: 10px;
+} <!-- все отступят на 10 друг от друга, кроме первого li.*/
+
+.menu li+li {
+    padding-left: 10px;
+}
+
+#modal {
+    display: none;
+}
+
+.slider {
+    background-image: url(../images/slider-item-1.jpg),url(../images/slider-item-2.jpg);
+    background-repeat: no-repeat;
+    /* Не повторять изображение по вертикали(горизонтали) */
+    background-size: cover;
+    /* Чтобы изображение растягивалось */
+    background-position: center;
+    /* Положение изображения */
+    min-height: 500px;
+    /* минимальная высота изображения, УКАЗЫВАТЬ ОБЯЗАТЕЛЬНО, значение смотреть по макету */
+}
+
+.slider__item-content {
+    text-align: center;
+    padding-top: 110px;
+    max-width: 665px;
+    /* максимальная ширина элемента с текстом и полем заполнениня измеряется в макете(PS or Figma) */
+    margin: 0 auto;
+    /* Центрирровать элемент */
+}
+
+.slider__title {
+    text-transform: uppercase;
+    /* Все символы текста становятся прописными (верхний регистр) */
+    color: #ffffff;
+    font-size: 30px;
+    /* Размер шрифта */
+    line-height: 36px;
+    /* Высота строки */
+    font-weight: 500px;
+    /* Устанавливает насыщенность шрифта(жирность) нормальное значение 400 */
+    letter-spacing: 1.5px;
+    /* расстояние между символами (в PS выглядит как Т с стрелкой в разные стороны снизу) */
+    margin-bottom: 25px;
+    /* Отступ вниз */
+    font-family: 'Roboto', sans-serif;
+}
+
+.slider__text {
+    font-size: 20px;
+    line-height: 24px;
+    color: black;
+    margin-bottom: 50px;
+}
+
+
+/* default-btn{} сделать параметры для всех таких элементов(поле ввода) */
+
+.default-btn {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 24px;
+    color: white;
+    font-weight: 500;
+    font-family: 'PT Serif', serif;
+    padding: 8px 30px 8px 24px;
+    border: 1px solid #ffc222;
+    border-right-width: 20px;
+    /* Устанавливает толщну границы справа */
+    position: relative;
+    z-index: 2;
+    /* каждый элемент может находиться как ниже, так и выше других объектов веб-страницы, их размещением по z-оси и управляет z-index. */
+    outline: none;
+}
+
+
+/* after - поставить обьект после элемента */
+
+.default-btn:after {
+    content: "\f105";
+    /* вставка чего либо - тут иконка стрелки вправо.(скачаннаяи подключенная раннее - Fonts.css) */
+    font-family: 'icomoon';
+    position: absolute;
+    /* Указывает, что элемент абсолютно позиционирован */
+    top: 50%;
+    /* чтобы всегда центрировалось вертикально */
+    transform: translateY(-50%);
+    /* Приподнять само себя на 50% */
+    right: -12px;
+    /* Смещает вправо -12 для того чтобы выйти за границу элемента */
+}
+
+
+/* оформление стрелов влево и вправо */
+
+
+/* position: relative; Положение элемента устанавливается относительно его исходного места. */
+
+.slider__inner {
+    position: relative;
+}
+
+.slick-btn {
+    /* Пишу slick__btn slick-next slick-prev с отступом(?) чтобы они относились к slider__inner(???) тк без отступов не работало */
+    position: absolute;
+    top: 70%;
+    z-index: 3;
+    /* Любые позиционированные элементы на веб-странице могут накладываться друг на друга в определенном порядке */
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    
+    cursor: pointer;
+    outline: none;/* Граница не отображается. */
+    background-color: #ffc222;
+    outline: none;
+}
+/* Сделать кнопку вправо(влево) активной(желтой)когда возможно пролистывание слайдера */
+.slick-btn.slick-disabled{
+    cursor: default;
+    background-color: transparent;
+    /* сделать фон прозрачным */
+}
+
+.slick-btn::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Сдвигает элемент на заданное значение по горизонтали и вертикали. */
+    font-family: 'icomoon';
+    color: white;
+}
+
+.slick-next::before {
+    content: "\f105";
+}
+
+.slick-prev::before {
+    content: "\f104";
+}
+
+.slick-next {
+    right: 0;
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.services{
+    padding: 50px 0px 30px;
+  }
+
+.services__top,
+.news__top{
+    display: flex;/* расположить элементы горизонтально */
+    justify-content: space-between; /* расположить элементы через промежутки */
+    margin-bottom: 60px;
+}
+
+.services__title-box,
+.form__title-box,
+.news__title-box{
+    max-width: 520px;/* зарезервировали место под текстовый элемент */
+    padding-left: 140px;/* От начала желтой линии до текста расстояние */
+    position: relative;
+}
+/* желтая линия перед(before) текстом */
+.services__title-box:before,
+.form__title-box:before,
+.news__title-box:before{
+    content: "";/* обязательное свойство если ставить before */
+    position: absolute;
+    width: 100px;/* ширина */
+    height: 2px;/* высота */
+    background-color: #ffc222;
+    left: 0;
+    top: 11px;
+}
+/* Наши услуги */
+.services__title,/* перечисление классов через запятую применит свойства CSS ко всем перечисленным (тк они одинаковые по сути в макете) */
+.form__title,
+.news__title{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #212020;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+}
+/* текст под нашими услугами(комплексный подход....) */
+.services__text,
+.form__text,
+.news__text{
+    letter-spacing: 0.1px;/*  интервал между символами в пределах элемента. */
+}
+
+.services__btn a,
+.news__btn a{
+    color: #373636;
+    line-height: 24px;
+    letter-spacing: 0. 25px;
+    padding: 0 38px;
+    border: 3px solid #e6e6e6;
+}
+
+.services__items{
+    display: flex;
+    justify-content: space-between;
+  }
+
+.services__item{
+    max-width: 360px;
+    text-align: center;
+    padding: 30px 0px 80px;
+    position: relative;
+    min-height: 375px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 7px 24.3px 2.7px rgba(91, 89, 89, 0.14);/* задает тень , параметры экспортируются из PS или Figma */
+  }
+
+.services__item-title{
+    color: #212020;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    padding: 24px 0;
+  }
+
+.services__item-text{
+    letter-spacing: 0.1px;
+    padding: 0px 30px 30px;
+}  
+
+.services__item-btn{
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+  }
+/* Сделать цвет текста для всех кнопок(about__item-btn. default-btn) одинаковым */
+.services__item-btn .default-btn{
+    color: #373636;
+}
+/* Сделать стрелку вправо для этих кнопок белой */
+.services__item-btn .default-btn:after{
+    color: #fff;
+}
+.services__item-link{
+    color: #050505;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid #050505;/* Подчеркивание */
+    margin-right: 60px;
+}
+/* Секция о компании */
+.about{
+    background-image: url(../images/about-fon.jpg);/* Адрес изображения фона и параметры его ниже */
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    background-repeat: no-repeat;
+    padding: 25px 0 45px;
+}
+/* Ширина блока (обертки) */
+.about__inner{
+    max-width: 555px;
+}
+
+.about__title{
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px 0 25px;
+}
+
+.about__text{
+    color: #d3d2d2;
+    font-size: 14px;
+    line-height: 24px;
+    font-family: 'PT Serif', serif;
+    margin-bottom: 30px;
+    letter-spacing: 0.1px;
+}
+
+.about__btn.default-btn::after{
+    color: #000000;
+}
+/* Секция(блок) формы */
+.form{
+    padding-top: 30px;/* отступ сверху для всей секции form */
+}
+.form__inner{
+    padding-bottom: 40px;
+    background-image: url(../images/form-fon.png);/* Фото барышни сбоку */
+    min-height: 460px;/* минимальная высота фото барышни */
+    background-repeat: no-repeat;
+    background-position: bottom right;/* поставить фото справа снизу */
+}
+  
+.form__box{
+    max-width: 850px;
+    padding-top: 45px;
+}
+
+.form__box-inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__box-left{
+    max-width: 260px;
+    width: 100%;/* чтобы обьект расширялся на 260 в любом случае */
+}
+
+.form__box-right{
+    max-width: 555px;
+    width: 100%;
+}
+/* Задаем свойства полям ввода и надписям возле них во всей форме(и левой и правой, inner общий блок для них) */
+.form__box-inner label,
+.form__box-inner input,
+.form__box-inner textarea{
+   display: block;/* отображает горизонтально обьекты */
+   width: 100%;
+}
+
+.form__box-inner label{
+    color: #282828;
+    line-height: 36px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.form__box-inner input{
+    margin-bottom: 6px;
+    outline: none;
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    padding: 0 10px; /* отступы слева и справа (сверху и снизу 0) */
+}
+
+.form__box-inner select{
+    outline: none;
+    
+    padding-left: 17px;
+}
+/* Задаем параметры для селектора из плагина тк отображатся будет он */
+.form__box-inner .jq-selectbox.jqselect{
+    display: block;/* отображает горизонтально обьекты */
+    width: 100%;
+}
+/*.jq-selectbox.jqselect- это плагин для стиля селектора(подключен скриптом jquery) */
+/* jq-selectbox__select внутренняя часть селектора из плагина */
+.form__box-inner .jq-selectbox__select{
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    padding-left: 17px;
+    /* background-color: transparent;
+    border-radius: 0; */
+}
+.form__box-inner .jq-selectbox__trigger-arrow::before{
+    content: "\f105";
+    font-family: 'icomoon';
+    position: absolute;
+    right: 17px;
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* !!! для  предварительно изменения параметров блоков нужно пользоватся инспектором(посмотреть код элемента) в браузере А ПОТОМ задавать тут */
+.form__box-inner .jq-selectbox__dropdown{
+	width: 100%;
+	margin: 2px 0 0;
+	padding: 0;
+	border: 1px solid #e6e6e6;
+	background: #FFF;
+	box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+/* параметры для селектора скопированы из файла jquery.formstyler.theme.css найти по поиску (ctrl+h) предварительно посмотрев его класс в инспекторе браузра */
+.form__box-inner .jq-selectbox li {
+	min-height: 18px;
+	padding: 5px 17px 6px;
+	color: #231F20;
+}
+.form__box-inner .jq-selectbox li.selected {
+	background-color: #A3ABB1;
+	color: #FFF;
+}
+.form__box-inner .jq-selectbox li:hover {
+	background-color: #08C;
+	color: #FFF;
+}
+.form__box-inner .jq-selectbox li.disabled {
+	color: #AAA;
+}
+.form__box-inner .jq-selectbox li.disabled:hover {
+	background: none;
+}
+.form__box-inner .jq-selectbox li.optgroup {
+	font-weight: bold;
+}
+.form__box-inner .jq-selectbox li.optgroup:hover {
+	background: none;
+	color: #231F20;
+	cursor: default;
+}
+.form__box-inner .jq-selectbox li.option {
+	padding-left: 25px;
+}
+
+.form__box-inner textarea{
+    outline: none;
+    border: 1px solid #e6e6e6;
+    height: 207px;
+    resize: none;/* запрет изменения размера */
+}
+
+.form__box-inner button{
+    background-color: transparent;/* делает фон прозрачным */
+    color: #282828;
+    margin-top: 37px;
+    float: right;/* сместить эдемент вправо(float не работают для непосредственных родственников Flex(a)) */
+}
+/* секция преимущества */
+.advantages{
+    padding: 55px 0 40px;/* сверху 55 снизу 40 по бокам 0 */
+    background-image: url(../images/adv-fon.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 285px;
+    background-size: cover;
+}
+.advantages__inner{
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+/* !!! padding: top right bottom left; */
+.advantages-item{
+    max-width: 360px;
+    padding: 0 20px;
+}
+
+.advantages__title{
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    padding: 60px 0px 15px;
+    position: relative;
+}
+/* Создаем желтый квадрат перед титулем */
+.advantages__title::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffc222;
+    /* Ставим квадрат по центру (Схема) */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.advantages__title::after{
+    content: "\f00c";
+    font-family: 'icomoon';
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.advantages__text{
+    line-height: 24px;
+    color: #d3d2d2;
+    letter-spacing: 0.1px;
+}
+/* Секция новости компании */
+.news{
+    padding: 55px 0 110px;
+    background-color: #f9f9f9;
+}
+
+.news__inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.news__slider{
+    max-width: 555px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 15.36px 0.64px rgba(128, 127, 127, 0.13);
+    padding: 60px 35px 45px 70px;
+    position: relative;
+}
+/* ставим кавычка в блок с помощью before */
+.news__slider::before{
+    content: "\f10e";
+    font-family: 'icomoon';
+    color: #fff;
+    font-size: 16px;
+    width: 65px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;/* символы встанут вертикально по центру */
+    background-color: #ffc222;
+    position: absolute;
+    top: 0;
+    left: 70px;
+}
+
+.news__blog{
+    max-width: 260px;
+    width: 100%;
+}
+
+.news__images{
+    position: relative;
+    /* Положение элемента устанавливается относительно его исходного места.
+     Добавление свойств left, top, right и bottom изменяет позицию элемента и сдвигает его в ту или иную сторону от первоначального расположения. */
+}
+
+.news__date{
+    position: absolute;
+    /* Указывает, что элемент абсолютно позиционирован, при этом другие элементы отображаются на веб-странице словно абсолютно позиционированного элемента и нет.
+     Положение элемента задается свойствами left, top, right и bottom, также на положение влияет значение свойства position родительского элемента. 
+     Так, если у родителя значение position установлено как static или родителя нет, то отсчет координат ведется от края окна браузера. 
+     Если у родителя значение position задано как fixed, relative или absolute,
+      то отсчет координат ведется от края родительского элемента. */
+    background-color: #ffc222;
+    height: 55px;
+    width: 50px;
+    color: white;
+    text-align: center;
+    padding: 20px 0 10px;
+    font-weight: 700;
+    /* поднимаем цифру 03.04 наверх */
+    top: 0px;
+    left: 10px;
+}
+
+.news__blog-title{
+    font-size: 16px;
+    line-height: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: #242424;
+    letter-spacing: 0.5px;
+    padding: 12px 0;
+}
+
+.news__blog-text{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'PT Serif', serif;
+    letter-spacing: 0.1px;
+    color: #5e5e5e;
+}
+
+.news__slide-title{
+ font-size: 18px;
+ line-height: 24px;
+ color: #242424;
+ font-family: 'Roboto', sans-serif;
+ font-weight: 500;
+ letter-spacing: 0.5px;
+ margin-bottom: 15px;
+}
+
+.news__slider-text{
+ color: #5e5e5e;
+ font-size: 14px;
+ line-height: 18px;
+ font-family: 'PT Serif', serif;
+ font-weight: 400;
+ letter-spacing: 0.1px;
+ margin-bottom: 30px;
+}
+
+.news__slide-autor{
+ letter-spacing: 0.1px;
+ color: #212020;
+ font-family: 'Roboto', sans-serif;
+ font-weight: 500;
+}
+/* постановка кнопок слайдера снизу вместе */
+.news__slider-inner .slick-btn{
+ top: auto;
+ bottom: -140px;
+}
+
+.news__slider-inner .slick-next{
+    right: -35px;
+}
+
+.news__slider-inner .slick-prev{
+    right: 20px;
+    left: auto;/* так как выше написано что у этой кнопки left 0 */
+}
+/* Если внутри inner есть slick-disabled то будут следующие свойства
+(чтоб на неактивной кнопка было видно рамку) */
+.news__slider-inner .slick-disabled{
+   color: #dadada;
+   border-color: #dadada;
+}
+/* для внутренней стрелки нужно прописать тоже но через btfore(тк на него повешена внутренняя стрелка) */
+.news__slider-inner .slick-disabled::before{
+    color: #dadada;
+}
+/* секция футера */
+.footer__content{
+  background-color: #595959;
+  padding: 20px 0 30px;
+}
+
+.footer__inner{
+    display: flex;
+    justify-content: space-between;
+}
+/* если кнопка бесплатная консультация находится внутри footer__inner
+ то работают следующие свойства */
+.footer__inner .header__btn{
+    float: none;/* отменяется смещение вправо(см. в хедере) */
+    display: inline-block;/* Это значение генерирует блочный элемент, который обтекается другими 
+    элементами веб-страницы подобно встроенному элементу. */
+}
+
+.footer__map{
+    padding-top: 35px;
+    max-width: 630px;
+    width: 100%;
+}
+/* обращение к фрейму взятому из гугла(карта) */
+ .footer__map iframe{
+    height: 250px;
+} 
+
+.footer__title{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+}
+
+.footer__text{
+    color: #d3d2d2;
+    margin-bottom: 25px;
+}
+
+.footer__info{
+    max-width: 360px;
+}
+.footer__list{
+    padding-top: 10px;
+}
+/* обращение ко всем li в блоке footer__list */
+.footer__list li{
+    margin-top: 10px;
+}
+
+.footer__list a{
+   font-size: 16px;
+   line-height: 24px;
+   letter-spacing: 0.25px;
+   color: #ffffff;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 500;
+   padding-left: 33px;
+   position: relative;
+}
+/* а где какую отдельно поставить надо напишем тут */
+.footer__list .footer__phone:before{
+    content: "\f095";
+    font-family: 'icomoon';
+    left: 2px;
+}
+
+.footer__list .footer__adress:before{
+    content: "\f041";
+    font-family: 'icomoon';
+    left: 2px;
+}
+/* определим общий стиль иконок слева */
+.footer__list a:before{
+   content: '\f003';
+   position: absolute;
+   left: 0;/* чтобы прижался к левому краю */
+   color: #ffc222;
+   font-family: 'icomoon';
+}
+/* секция копирайта */
+.footer__copy{
+   background-color: #303030;
+   text-align: center;
+   font-size: 15px;
+   line-height: 24px;
+   font-weight: 400;
+   font-family: 'Roboto', sans-serif;
+   padding: 8px 0;
+}
+
+#modal{
+    width: 300px;
+}
+
+
+#modal input{
+   display: block;
+   outline: none;
+   margin-bottom: 6px;
+   outline: none;
+   height: 40px;
+   border: 1px solid #e6e6e6;
+   border-radius: 4px;
+   padding: 0 10px; /* отступы слева и справа (сверху и снизу 0) */
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+}
+/* отдельно пропишем цвет кнопки во всплывающем меню */
+#modal input[type='submit']{
+    background-color: #ffc222;
+    border: none;
+}
+
+.header__btn-menu{
+    display: none;
+    font-size: 28px;
+}

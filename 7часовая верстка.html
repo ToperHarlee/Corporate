@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&display=swap&subset=cyrillic"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css"><!-- кроссбраузерное отображение -->
+    <link rel="stylesheet" href="css/fonts.css"><!-- подключенные шрифты -->
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css"><!-- скрипт формы -->
+    <link rel="stylesheet" href="css/slick.css"> <!-- Слайдер картинок -->
+    <link rel="stylesheet" href="css/jquery.formstyler.css"><!-- стиль формы(?) -->
+    <!-- <link rel="stylesheet" href="css/jquery.formstyler.theme.css"> --><!-- тема формы селектора Удалили после настройки в CSS(файл jquery.formstyler.theme с папки CSS тоже)-->
+    <link rel="stylesheet" href="css/style.css"><!-- основной файл CSS -->
+    <link rel="stylesheet" href="css/media.css"><!-- медиа файл для адаптива -->
+</head>
+<!-- <link> подключает файлы с к документу html(CSS,fonts,итд) -->
+
+<body>
+    <header class="header">
+        <!-- первая секция email phone  и бесплатная консултация -->
+        <div class="header__top">
+            <div class="container">
+                <!-- обертка -->
+                <div class="header__contacts">
+                    <a class="header__phone" href="tel:38(096)3092145">38 (096) 309 21 45</a>
+                    <a class="header__email" href="#">layout585@gmail.com</a>
+                    <a data-fancybox data-src="#modal" href="javascript:;" class="header__btn" href="#">Бесплатная
+                        консультация</a>
+                    <!-- вставлены атрибуты для <a>- кнопки из демо inline fancybox для появления всплывающей формы -->
+                </div>
+            </div>
+        </div>
+        <div class="header__content">
+            <!-- вторая секция с логотипом -->
+            <div class="container">
+                <!-- контейнер -->
+                <div class="header__content-inner">
+                    <!-- обертка -->
+
+                    <div class="header__logo">
+                        <a href="#"><img src="images/logo.png" alt="#"></a>
+                    </div>
+                    <nav class="menu">
+                      <div class="header__btn-menu">
+                        <span class="icon-bars"></span><!-- см.font.css -->
+                      </div>
+                        <ul>
+                            <li><a href="#">
+                                    Главная
+                                </a></li>
+                            <li><a href="#">
+                                    О компании
+                                </a></li>
+                            <li><a href="#">
+                                    Услуги
+                                </a></li>
+                            <li><a href="#">
+                                    Контакты
+                                </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="slider">
+        <!-- Секция слайдера -->
+        <div class="container">
+            <div class="slider__inner">
+                <!-- Обертка -->
+                <div class="slider__item">
+                    <!-- Содержимое слайдера 1-->
+                    <div class="slider__item-content">
+                        <!-- Оборачивает text title button -->
+                        <div class="slider__title">
+                            <!-- Название слайдера 1-->
+                            КОМПЛЕКСНОЕ ЗАКРЫТИЕ ПРЕДПРИЯТИЯ
+                        </div>
+                        <div class="slider__text">
+                            <!-- Текст над полем ввода -->
+                            Полное прекращение существования юридического лица
+                            с сохранением легальности всей предыдущей деятельности.
+                        </div>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
+                            <!-- Кнопка оставить заявку -->
+                            Оставить заявку
+                        </a>
+                    </div>
+                </div>
+                <div class="slider__item">
+                    <!-- Содержимое слайдера 2-->
+                    <div class="slider__item-content">
+                        <!-- Оборачивает text title button -->
+                        <div class="slider__title">
+                            <!-- Название слайдера 2-->
+                            КОМПЛЕКСНОЕ ЗАКРЫТИЕ ПРЕДПРИЯТИЯ
+                        </div>
+                        <div class="slider__text">
+                            <!-- Текст над полем ввода -->
+                            Полное прекращение существования юридического лица
+                            с сохранением легальности всей предыдущей деятельности.
+                        </div>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
+                            <!-- Кнопка оставить заявку. лучше делать не <div>  а с помощью <a> -->
+                            Оставить заявку
+                        </a>
+                    </div>
+                </div>
+                <div class="slider__item">
+                    <!-- Содержимое слайдера 3-->
+                    <div class="slider__item-content">
+                        <!-- Оборачивает text title button -->
+                        <div class="slider__title">
+                            <!-- Название слайдера 3-->
+                            КОМПЛЕКСНОЕ ЗАКРЫТИЕ ПРЕДПРИЯТИЯ
+                        </div>
+                        <div class="slider__text">
+                            <!-- Текст над полем ввода -->
+                            Полное прекращение существования юридического лица
+                            с сохранением легальности всей предыдущей деятельности.
+                        </div>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
+                            <!-- Кнопка оставить заявку -->
+                            Оставить заявку
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="services"><!-- Секция наши услуги -->
+        <div class="container"><!-- Контейнер -->
+          <div class="services__top"><!-- Верхный блок секции с желтой линией сбоку-->
+            <div class="services__title-box"><!-- Родитель для title и text -->
+              <div class="services__title">
+                Наши Услуги
+              </div>
+              <div class="services__text">
+                Комплексный подход к вашему вопросу, своевременная правовую помощь, представление интересов во всех судебных
+                инстанциях.
+              </div>
+            </div>
+            <div class="services__btn"><!-- Кнопка -->
+              <a href="#">
+                Показать все услуги
+              </a>
+            </div>
+          </div>
+          <div class="services__items"><!-- раздел секции с тремя блоками горизонтальными -->
+            <div class="services__item"><!-- первый блок -->
+              <img src="images/about-1.png" alt=""><!-- логотипчик -->
+              <div class="services__item-title"><!-- подпись(надпись) -->
+                Банкротство и ликвидация
+              </div>
+              <div class="services__item-text"><!-- блок текста -->
+                Полное прекращение существования юридического лица с сохранением легальности всей предыдущей деятельности
+              </div>
+              <div class="services__item-btn"><!-- обертка(блок) для Подробнее и Заказать -->
+                <a class="services__item-link" href="#">Подробнее</a><!-- ссылка -->
+                <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn"><!-- кнопка с формой заполнения -->
+                  Заказать
+                </a>
+              </div>
+            </div>
+            <div class="services__item"><!-- вторай блок -->
+              <img src="images/about-2.png" alt="">
+              <div class="services__item-title">
+                Адвокатское сопровождение
+              </div>
+              <div class="services__item-text">
+                Мы гарантируем полное профессиональное обслуживание клиентов в заявленных сферах деятельности и соблюдение
+                конфиденциальности.
+              </div>
+              <div class="services__item-btn">
+                <a class="services__item-link" href="#">Подробнее</a>
+                <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                  Заказать
+                </a>
+              </div>
+            </div>
+            <div class="services__item"><!-- третий блок -->
+              <img src="images/about-3.png" alt="">
+              <div class="services__item-title">
+                Налоговый аудит
+              </div>
+              <div class="services__item-text">
+                Налоговый аудит проводят перед проведением налоговых проверок; при оценке возможных налоговых рисков; при
+                оптимизации налогообложения.
+              </div>
+              <div class="services__item-btn">
+                <a class="services__item-link" href="#">Подробнее</a>
+                <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn"><!-- Всплывающее окно (скрипт с fancybox) -->
+                  Заказать
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about"><!-- Секция О нас -->
+          <div class="container"><!-- Контейнер -->
+            <div class="about__inner"><!-- обертка для содержимого (title text about__btn) -->
+          <div class="about__title"><!-- Надпись перед текстовой частью -->
+            О компании
+          </div>
+          <div class="about__text">
+            Компания специализируется на оказании услуг в сфере корпоративного права, налогового консалтинга, представительства в судах, ликвидации и банкротства предприятий. На сегодняшний день, коллектив компании объединяет 
+            высокопрофессиональных экспертов имеющих 
+          </div>
+          <a  href="#" class="about__btn default-btn"><!-- Всплывающее окно (скрипт с fancybox) -->
+            Узнать больше
+          </a><!-- добавил в класс about__btn. И это ссылка на страницу где рассказывается о компаниии--> 
+        </div>
+      </div>
+      </section>
+      <section class="form"><!-- Секция формы (фио телефон почта и Барышня) -->
+        <div class="container">
+          <div class="form__inner"><!-- Контейнер на который повесим фото барышни -->
+          <div class="form__content">
+            <div class="form__title-box"><!-- Родитель для title и text (блок с желтой линией сбоку)-->
+              <div class="form__title">
+                Получить Консультацию
+              </div>
+              <div class="form__text">
+                Комплексный подход к вашему вопросу, 
+                своевременная правовую помощь, представление интересов во всех судебных инстанциях.
+              </div>
+            </div>
+            <div class="form__box"><!-- блок формы левой и правой(почта фио и тел) -->
+              <form >
+                <div class="form__box-inner"><!-- Контейнер для всего внутреннего в левой форме-->
+                 <div class="form__box-left"><!-- Левая часть формы ввода данных -->
+                  <label><!-- подпись поля ввода -->
+                    e-mail
+                    <input type="text">
+                  </label>
+                  <label>
+                    Контактный телефон
+                    <input type="text">
+                  </label>
+                  <label>
+                    Фио
+                    <input type="text">
+                  </label>
+                  <label><!-- Селектор -->
+                    тема вопроса
+                    <select><!-- select>option*4 -->
+                      <option>----------</option>
+                      <option>----------</option>
+                      <option>----------</option>
+                      <option>----------</option>
+                    </select>
+                  </label>
+                 </div>
+                 <div class="form__box-right"><!-- правая часть формы с полем ввода текста  и кнопкой (получить консультацию) внизу-->
+                  <label>
+                    Сообщение
+                    <textarea ></textarea>
+                  </label>
+                  <button class="default-btn" type="submit">Получить консультацию</button><!-- Кнопка -->
+                 </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="advantages"><!--  секция advantages(с тремя блоками и бэкграундом) -->
+       <div class="container"><!-- контейнер нужен в обязательном порядке -->
+        <div class="advantages__inner"><!-- обертка для содержимого  -->
+         <div class="advantages-item">
+           <div class="advantages__title"><!-- первый блок "Десятки добровольных ликвидаций ежемесячно"-->
+            Десятки добровольных ликвидаций ежемесячно
+           </div>
+           <div class="advantages__text">
+            Мы умеем минимизировать все риски в процессе добровольной ликвидации юридических лиц.
+           </div>
+         </div>
+         <div class="advantages-item"><!-- второй блок "Отличное знание законов в сфере банкротства"  -->
+          <div class="advantages__title">
+            Отличное знание законов в сфере банкротства
+          </div>
+          <div class="advantages__text">
+            Позволяют нам эффективно отстаивать как интересы кредиторов, так и интересы собственников проблемной организации.
+          </div>
+        </div>
+        <div class="advantages-item"><!-- третий блок "Большой опыт сопровождения банкротства" -->
+          <div class="advantages__title">
+            Большой опыт сопровождения банкротства
+          </div>
+          <div class="advantages__text">
+            Мы обладаем большим опытом сопровождения процедур банкротства предприятий.
+          </div>
+        </div>
+        </div>
+       </div>
+      </section>
+
+      <section class="news"><!-- Секция Новости компании -->
+          <div class="container"><!-- не забываем создавать контейнер для секций -->
+            <div class="news__top"><!-- Верхный блок секции с желтой линией сбоку -->
+              <div class="news__title-box"><!-- Родитель для title и text -->
+                <div class="news__title">
+                  Новости Компании
+                </div>
+                <div class="news__text">
+                  Комплексный подход к вашему вопросу, своевременная правовую помощь, представление интересов во всех судебных инстанциях.
+                </div>
+              </div>
+              <div class="news__btn"><!-- Кнопка -->
+                <a href="#">
+                  Открыть все новости
+                </a>
+              </div>
+            </div>
+            <div class="news__inner"><!-- обертка для слайдера -->
+            <div class="news__slider"><!-- слайдер -->
+             <div class="news__slider-inner"><!-- обертка уже внутри слайдера(title text autor так же он для них РОДИТЕЛЬ!) -->
+               <div class="news__slider-item"><!-- первый слайд -->
+               <div class="news__slide-title">
+                Банкротство и ликвидация предприятия в Украине
+               </div>
+               <div class="news__slider-text">
+                На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных областях права. 
+                На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных областях права. На сегодняшний день, 
+                коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных областях права...»
+               </div>
+               <div class="news__slide-autor"><!-- методология построения html по бэм блок-элемент-модификатор(классы близкие по названию) -->
+                Андрей Ворошилов, генеральный д иректор компании Bankom
+               </div>
+               </div>
+               <div class="news__slider-item"><!-- второй слайд -->
+                <div class="news__slide-title">
+                 Банкротство и ликвидация предприятия в Severodvinsk
+                </div>
+                <div class="news__slider-text">
+                 На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных областях права. 
+                 На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных областях права. На сегодняшний день, 
+                 коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных областях права...»
+                </div>
+                <div class="news__slide-autor"><!-- методология построения html по бэм блок-элемент-модификатор(классы близкие по названию) -->
+                 Андрей Ворошилов, генеральный директор компании Bankom
+                </div>
+                </div>
+                <div class="news__slider-item"><!-- третий слайд -->
+                  <div class="news__slide-title">
+                   Банкротство и ликвидация предприятия в Severodvinsk
+                  </div>
+                  <div class="news__slider-text">
+                   На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных областях права. 
+                   На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных областях права. На сегодняшний день, 
+                   коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных областях права...»
+                  </div>
+                  <div class="news__slide-autor"><!-- методология построения html по бэм блок-элемент-модификатор(классы близкие по названию) -->
+                   Андрей Ворошилов, генеральный д иректор компании Bankom
+                  </div>
+                  </div>
+             </div>
+            </div>
+            <a class="news__blog" href="#"><!-- первый слайд с текстом 03.04 должен быть кликабельным поэтому не <div> а ,<a>-->
+              <div class="news__images"><!-- блок изображения с текстом(весь блок изображения и текста ) -->
+               <img src="images/news-1.jpg" alt="">
+               <div class="news__date">03.04</div><!-- цифры в левом верхнем углу изображения 1 -->
+              </div>
+              <div class="news__blog-title">
+                Новость компании 
+              </div>
+              <div class="news__blog-text">
+                На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных областях права. 
+                На сегодняшний день, коллектив компании объединяет  высокопрофессиональных экспертов имеющих специализации в отдельных областях права...»
+              </div>
+            </a>
+            <a class="news__blog" href="#"><!-- второй слайд с текстом внизу 03.04 (с очками) -->
+              <div class="news__images"><!-- блок изображения с текстом(весь блок изображения и текста должен быть кликабельным) -->
+               <img src="images/news-2.jpg" alt="">
+               <div class="news__date">03.04</div>
+              </div>
+              <div class="news__blog-title">
+                Новость компании 
+              </div>
+              <div class="news__blog-text">
+                На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных областях права. 
+                На сегодняшний день, коллектив компании объединяет  высокопрофессиональных экспертов имеющих специализации в отдельных областях права...»
+              </div>
+             </a>
+            </div>
+          </div>
+      </section>
+
+      <footer class="footer"><!-- нижняя секция футер(будет состоять из двух частей - сам футер с кнопкой постой итд и маленькой секцией копирайта) -->
+      <div class="footer__content">
+        <div class="container"><!-- поделится на две части в одной информация(почта телефон адрес кнопка) в другой карта -->
+          <div class="footer__inner">
+          <div class="footer__info"><!-- содержит в себе титул текст кнопку(бесплатная консультация) и почту и адрес -->
+        <div class="footer__title">
+          Комплексное закрытие предприятия
+        </div>
+         <div class="footer__text">
+          Полное прекращение существования юридического лица
+          с сохранением легальности всей предыдущей деятельности.
+         </div>
+         <a data-fancybox data-src="#modal" href="javascript:;" class="header__btn" href="#">
+           Бесплатная консультация
+             </a><!-- таккая же кнопка как в хедере бесплатная консультация -->
+             <ul class="footer__list"><!-- блок почты телефона и адреса в виде меню -->
+               <li><a class="footer__phone" href="tel:+38 (096) 309 21 45">телефон:225757522</a></li>
+               <li><a href="#">layout585@gmail.com</a></li>
+               <li><a class="footer__adress" href="#">Железнодорожная д1 г.Северодвинск</a></li>
+             </ul>
+         </div>
+         <div class="footer__map"><!-- блок с картой (карта берется из поделится/встраивание карт в google.map) -->
+          <iframe width="630px" height="300px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1712.9440102293397!2d39.84388971632427!3d64.57502678689124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x44184221790a2599%3A0x7e6e50cd0cca0171!2z0JbQtdC70LXQt9C90L7QtNC-0YDQvtC20L3QsNGPINGD0LsuLCAxLCDQodC10LLQtdGA0L7QtNCy0LjQvdGB0LosINCQ0YDRhdCw0L3Qs9C10LvRjNGB0LrQsNGPINC-0LHQuy4sIDE2NDUyMA!5e0!3m2!1sru!2sru!4v1587720775295!5m2!1sru!2sru" 
+           frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+         </div>
+        </div>
+      </div>
+      <div class="footer__copy"><!-- копирайт -->
+        <div class="container">
+          <div class="copy__text">
+            © 2017 Template by Anastasia Shaposhnyk, повторил и учился Mikhail Bakhtin. Все права защищены.
+          </div>
+        </div>
+      </div>
+      </footer>
+
+    <div id="modal">
+        <!-- Всплывающая форма при нажатии на беспл консультацию привязана id="modal" -->
+        <form >
+          <input type="text" placeholder="Ваше имя">
+          <input type="text" placeholder="Ваш телефон">
+          <input type="text" placeholder="Ваши деньги">
+          <input type="submit" value="отправить">
+        </form>
+    </div>
+
+    <!-- скрипт для появляющейся формы (jquery google cdn) последовательность запросов и подключения сверху- вниз  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script><!-- подключаем локальный скрипт -->
+    <script src="js/slick.min.js"></script><!-- Скрипт слайдера картинок -->
+    <script src="js/jquery.formstyler.min.js"></script><!-- скрипт стилизации селектора -->
+    <script src="js/main.js"></script><!-- подключаем к документу JS -->
+
+</body>
+
+</html>
